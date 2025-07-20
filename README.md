@@ -4,22 +4,21 @@ This project implements a comprehensive **machine learning pipeline** to **predi
 
 ## Streamlit web app
 
-| Streamlit web app                 |
-| --------------------------------- |
-| ![streamlit](streamlit.jpg)       |
-| ![streamlit2](streamlit2.jpg)       |
-| ![streamlit3](streamlit3.jpg)       |
+| Streamlit web app                          |
+| ------------------------------------------ |
+| ![streamlit](images/streamlit.jpg)         |
+| ![streamlit2](images/streamlit2.jpg)       |
+| ![streamlit3](images/streamlit3.jpg)       |
 
 
 ## 📁 Project Structure
 
-- California_House_Price_Prediction.ipynb: Jupyter Notebook, who exploratory analysis and model experimentation
-- train_model.py: Model training pipeline: preprocessing, training, evaluation, saving best model
-- api.py: Model inference logic: prediction, feature engineering, logging
-- app.py: # Streamlit web app: UI for predictions and map visualization
-A Streamlit web application for users to input house characteristics, get median house price predictions, visualize the property location on a map, and view recent prediction history.
-- best_model_Stacking_Linear+Tree+Cat_2025_07_20.pkl: Saved best model (scaler + regressor)
-- prediction_history.csv: Log of all user predictions made via the app
+- `California_House_Price_Prediction.ipynb`: Jupyter Notebook, who exploratory analysis and model experimentation
+- `train_model.py`: Model training pipeline: preprocessing, training, evaluation, saving best model
+- `api.py`: Model inference logic: prediction, feature engineering, logging
+- `app.py`: # Streamlit web app: UI for predictions and map visualization
+- `best_model_Stacking_Linear+Tree+Cat_2025_07_20.pkl`: Saved best model (scaler + regressor)
+- `prediction_history.csv`: Log of all user predictions made via the app
 
 
 ## 🛠️ Requirements
@@ -33,18 +32,19 @@ pip install pandas numpy matplotlib seaborn plotly scikit-learn statsmodels scip
 
 ## 📂 Dataset
 
-We use the [fetch_california_housing](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.fetch_california_housing.html )dataset from scikit-learn, which is based on the 1990 U.S. Census data.
+We use the [fetch_california_housing](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.fetch_california_housing.html) dataset from `scikit-learn`, which is based on the 1990 U.S. Census data.
 - 📌 Size: 20,640 samples (block groups) with 8 numerical features
-- 🎯 Target: MedHouseVal – the median house value (in $100,000s) for households within a block
+- 🎯 Target: `MedHouseVal`: the median house value (in $100,000s) for households within a block
 - 📍 Geographic Scope: California state (includes latitude and longitude)
 - 🧮 Features:
-    - MedInc – Median income in block group (10k USD units)
-    - HouseAge – Median age of houses in block group
-    - AveRooms – Average number of rooms per household
-    - AveBedrms – Average number of bedrooms per household
-    - Population – Total population of the block group
-    - AveOccup – Average household occupancy
-    - Latitude / Longitude – Geographic coordinates
+    - `MedInc`: Median income in block group (10k USD units)
+    - `HouseAge`: Median age of houses in block group
+    - `AveRooms`: Average number of rooms per household
+    - `AveBedrms`: Average number of bedrooms per household
+    - `Population`: Total population of the block group
+    - `AveOccup`: Average household occupancy
+    - `Latitude` / `Longitude`: Geographic coordinates
+
 The dataset is automatically downloaded using `scikit-learn`:
 ```bash
 from sklearn.datasets import fetch_california_housing
@@ -55,11 +55,11 @@ housing = fetch_california_housing()
 ## 🧠 Model Used
 
 A wide variety of regression models are trained and evaluated, including:
-- Linear Models: LinearRegression, Ridge, Lasso, ElasticNet, BayesianRidge
-- Tree-Based Models: DecisionTree, RandomForest, ExtraTrees, GradientBoosting, HistGradientBoosting
-- Boosting: XGBoost, LightGBM, CatBoost, AdaBoost
-- Others: SVR, KNN, HuberRegressor, MLPRegressor (Neural Network)
-- Stacking Regressors: Multiple combinations of base learners and meta-models for ensemble learning
+- **Linear Models**: LinearRegression, Ridge, Lasso, ElasticNet, BayesianRidge
+- **Tree-Based Models: DecisionTree, RandomForest, ExtraTrees, GradientBoosting, HistGradientBoosting
+- **Boosting**: XGBoost, LightGBM, CatBoost, AdaBoost
+- **Others**: SVR, KNN, HuberRegressor, MLPRegressor (Neural Network)
+- **Stacking Regressors**: Multiple combinations of base learners and meta-models for ensemble learning
 
 
 ## 📊 Model Performance Metrics
