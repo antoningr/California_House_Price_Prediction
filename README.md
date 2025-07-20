@@ -56,7 +56,7 @@ housing = fetch_california_housing()
 
 A wide variety of regression models are trained and evaluated, including:
 - **Linear Models**: LinearRegression, Ridge, Lasso, ElasticNet, BayesianRidge
-- **Tree-Based Models: DecisionTree, RandomForest, ExtraTrees, GradientBoosting, HistGradientBoosting
+- **Tree-Based Models**: DecisionTree, RandomForest, ExtraTrees, GradientBoosting, HistGradientBoosting
 - **Boosting**: XGBoost, LightGBM, CatBoost, AdaBoost
 - **Others**: SVR, KNN, HuberRegressor, MLPRegressor (Neural Network)
 - **Stacking Regressors**: Multiple combinations of base learners and meta-models for ensemble learning
@@ -64,11 +64,12 @@ A wide variety of regression models are trained and evaluated, including:
 
 ## 📊 Model Performance Metrics
 Each model is evaluated using:
-- MAE (Mean Absolute Error) – Average magnitude of prediction error
-- MSE (Mean Squared Error) – Penalizes larger errors more than MAE
-- RMSE (Root Mean Squared Error) – Interpretable in target units
-- R² Score (Coefficient of Determination) – Indicates goodness of fit
-- Cross-Validation R² – Mean R² score across folds for generalization check
+- **MAE (Mean Absolute Error)**: Average magnitude of prediction error
+-**MSE (Mean Squared Error)**: Penalizes larger errors more than MAE
+- **RMSE (Root Mean Squared Error)**: Interpretable in target units
+- **R² Score (Coefficient of Determination)**: Indicates goodness of fit
+- **Cross-Validation R²**: Mean R² score across folds for generalization check
+
 The model with the best test R² score is automatically selected and saved for deployment.
 
 
